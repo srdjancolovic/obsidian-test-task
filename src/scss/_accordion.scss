@@ -1,0 +1,72 @@
+@use './mixins' as mixins;
+@use './colors' as colors;
+
+.accordion {
+    @include mixins.mq('from', 1400) {
+        max-width: 670px;
+    }
+
+    &__item {
+        border-bottom: 1px solid colors.$lightGray2;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &.active {
+            .accordion__content {
+                max-height: 200px;
+
+                @include mixins.mq('from', 1400) {
+                    padding-bottom: 24px;
+                }
+
+                @include mixins.mq('to', 1400) {
+                    padding-bottom: 32px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        cursor: pointer;
+        font-weight: 300;
+        line-height: 1.6;
+        color: colors.$darkGray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: colors.$black;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        span {
+            font-size: 27px;
+        }
+
+        @include mixins.mq('from', 1400) {
+            padding-block: 32px;
+            max-height: 86px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            padding-block: 24px;
+            max-height: 71px;
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0.7px;
+        color: colors.$darkGray;
+    }
+}

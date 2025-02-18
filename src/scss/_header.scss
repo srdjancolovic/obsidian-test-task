@@ -1,0 +1,107 @@
+@use '../scss/mixins' as mixins;
+@use '../scss/colors' as colors;
+
+.header {
+    background: #fff;
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @include mixins.mq('from', 767) {
+        padding: 10px 75px 7px;
+    }
+
+    @include mixins.mq('to', 767) {
+        padding: 6px 24px 6px 28px;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            outline: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include mixins.mq('to', 767) {
+                width: 28px;
+                height: 28px;
+            }
+
+            @include mixins.mq('from', 767) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &__logo {
+        width: 62px;
+        height: 49px;
+
+        @include mixins.mq('to', 767) {
+            order: 2;
+        }
+    }
+
+    &__menu {
+        display: flex;
+
+        @include mixins.mq('from', 767) {
+            gap: 30px;
+        }
+
+        @include mixins.mq('to', 767) {
+            display: none;
+        }
+
+        li {
+            display: inline-block;
+
+            a {
+                font-size: 14px;
+                line-height: 1.6;
+                letter-spacing: 0.7px;
+                color: colors.$darkGray;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__mobile-menu-search,
+    &__buttons {
+        display: flex;
+
+        @include mixins.mq('from', 767) {
+            gap: 18px;
+        }
+
+        @include mixins.mq('to', 767) {
+            gap: 15px;
+        }
+    }
+
+    &__buttons {
+        @include mixins.mq('to', 767) {
+            order: 3;
+
+            button {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__mobile-menu-search {
+        @include mixins.mq('from', 767) {
+            display: none;
+        }
+    }
+}

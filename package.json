@@ -1,0 +1,15 @@
+{
+    "name": "test-task",
+    "scripts": {
+        "dev": "parcel ./src/index.html --no-cache",
+        "build": "parcel build ./src/index.html"
+    },
+    "dependencies": {
+        "sass": "^1.84.0"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.13.3",
+        "parcel": "^2.13.3",
+        "svgo": "^3.3.2"
+    }
+}

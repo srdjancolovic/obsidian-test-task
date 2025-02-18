@@ -1,0 +1,23 @@
+@use './colors' as colors;
+
+.toast-message {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    height: fit-content;
+    bottom: -50px;
+    background: colors.$lightGray;
+    color: colors.$white;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &--show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(5px);
+    }
+}

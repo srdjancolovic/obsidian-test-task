@@ -1,0 +1,39 @@
+@use './colors' as colors;
+@use './mixins' as mixins;
+
+.btn {
+    padding: 6px 30px;
+    background-color: colors.$brown;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: colors.$darkGray;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mixins.mq('from', 1400) {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+
+    @include mixins.mq('to', 1400) {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+
+    &:hover {
+        background-color: colors.$lightGray;
+    }
+
+    &--default {
+        width: fit-content;
+    }
+
+    &--full {
+        width: 100%;
+    }
+}

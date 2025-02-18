@@ -1,0 +1,57 @@
+@use './colors' as colors;
+
+.amount-changer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 109px;
+    height: 47px;
+    border: 1px solid colors.$black;
+
+    &__btn {
+        width: 40px;
+        height: 100%;
+        font-size: 16px;
+        line-height: 1.6;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-family: 'Lato', sans-serif;
+        color: colors.$black;
+
+        &:hover {
+            background-color: colors.$lightGray2;
+        }
+
+        &:active {
+            background-color: colors.$lightGray2;
+        }
+    }
+
+    &__input {
+        width: 28px;
+        height: 100%;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        border: none;
+        appearance: textfield;
+        background-color: transparent;
+        color: colors.$black;
+        font-family: 'Lato', sans-serif;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+
+        &[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}

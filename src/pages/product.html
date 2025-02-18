@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Page</title>
+        <link rel="stylesheet" href="../scss/main.scss" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </head>
+    <body>
+        <section class="product-info">
+            <!-- Breadcrumb for mobile -->
+            <div class="product-info__breadcrumb--hide-on-desktop">
+                <div class="product-info__breadcrumb-mobile"></div>
+            </div>
+            <!-- Main product image -->
+
+            <img
+                src="../assets/images/prodcuts/prodPlaceholderImg.png"
+                alt="Product"
+                class="product-info__main-img"
+            />
+            <div class="product-info__data">
+                <!-- Breadcrumb for desktop -->
+                <div class="product-info__breadcrumb--hide-on-mobile">
+                    <div class="product-info__breadcrumb-desktop"></div>
+                </div>
+                <!-- Product info -->
+                <div class="product-info__data-wrapper">
+                    <div class="product-info__title">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                    <p class="product-info__description"></p>
+                    <div class="product-info__declarations">
+                        <div class="product-info__declaration">
+                            <img
+                                src="#"
+                                alt="Declaration icon"
+                                class="product-info__declaration-icon"
+                            />
+                            <p class="product-info__declaration-title"></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product radio buttons -->
+                <div class="product-info__radio-buttons">
+                    <label class="radio-button">
+                        <input
+                            type="radio"
+                            name="option"
+                            class="radio-button__input"
+                            checked
+                        />
+                        <span class="radio-button__label">Buy Now | $38</span>
+                    </label>
+                    <label class="radio-button">
+                        <input
+                            type="radio"
+                            name="option"
+                            class="radio-button__input"
+                        />
+                        <span class="radio-button__label"
+                            >Subscribe (SAVE 20%) | $30</span
+                        >
+                    </label>
+                </div>
+                <!-- Add to cart button and amount toggler -->
+                <div class="product-info__cart-controls">
+                    <div class="amount-changer">
+                        <button class="amount-changer__btn" id="decrease">
+                            −
+                        </button>
+                        <input
+                            type="number"
+                            class="amount-changer__input"
+                            id="amount"
+                            value="1"
+                            min="1"
+                        />
+                        <button class="amount-changer__btn" id="increase">
+                            +
+                        </button>
+                    </div>
+                    <button id="add-to-cart-btn" class="btn btn--full">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Accordion section -->
+        <section class="product-info__accordion">
+            <div id="product-accordion" class="accordion"></div>
+        </section>
+        <!-- Similar products slider section -->
+        <section
+            id="similar-products-slider"
+            class="product-info__slider"
+        ></section>
+        <!-- Decoration on page bottom for desktop -->
+        <div class="product-page-decoration"></div>
+
+        <script
+            type="module"
+            src="../js/components/product/product.js"
+        ></script>
+    </body>
+</html>

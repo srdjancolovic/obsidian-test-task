@@ -1,0 +1,99 @@
+@use '../scss/colors' as colors;
+@use '../scss/mixins' as mixins;
+
+.slider {
+    position: relative;
+    width: 100%;
+
+    &__button-next,
+    &__button-prev {
+        position: absolute;
+        z-index: 2;
+        top: 227px;
+
+        @include mixins.mq('to', 1400) {
+            display: none;
+        }
+    }
+
+    &__button-next {
+        right: -48px;
+    }
+
+    &__button-prev {
+        left: -48px;
+    }
+
+    &__content {
+        img {
+            object-fit: cover;
+            width: 100%;
+
+            @include mixins.mq('from', 1400) {
+                height: 454px;
+            }
+
+            @include mixins.mq('to', 1400) {
+                height: 352px;
+            }
+        }
+    }
+
+    &__slide-title,
+    &__slide-description,
+    &__slide-price {
+        font-family: 'Lato', sans-serif;
+        line-height: 1.6;
+        color: colors.$darkGray;
+        text-transform: uppercase;
+    }
+
+    &__slide-title,
+    &__slide-description {
+        font-size: 16px;
+    }
+
+    &__slide-title {
+        font-weight: normal;
+
+        @include mixins.mq('from', 1400) {
+            margin-top: 8px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            margin-top: 6px;
+        }
+    }
+
+    &__slide-description {
+        font-weight: 300;
+
+        @include mixins.mq('from', 1400) {
+            margin-top: 5px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            margin-top: 4px;
+        }
+    }
+
+    &__slide-price {
+        letter-spacing: 0.8px;
+
+        @include mixins.mq('from', 1400) {
+            font-size: 18px;
+            margin-top: 31px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            font-size: 16px;
+            margin-top: 26px;
+        }
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}

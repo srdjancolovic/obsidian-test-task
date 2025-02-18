@@ -1,0 +1,318 @@
+@use '../scss/mixins' as mixins;
+@use '../scss/colors';
+
+.product-info {
+    max-width: 1440px;
+    margin-inline: auto;
+    display: flex;
+
+    @include mixins.mq('from', 1400) {
+        gap: 67px;
+        padding-right: 75px;
+    }
+
+    @include mixins.mq('to', 1400) {
+        flex-direction: column;
+    }
+
+    &__main-img {
+        object-fit: cover;
+
+        @include mixins.mq('from', 1400) {
+            min-width: 910px;
+            height: 770px;
+        }
+
+        @include mixins.mq('fromto', 767, 1400) {
+            height: 600px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            width: 100%;
+        }
+
+        @include mixins.mq('to', 767) {
+            width: 100%;
+            min-height: 390px;
+        }
+    }
+
+    &__data {
+        @include mixins.mq('to', 1400) {
+            padding-inline: 25px;
+            padding-bottom: 42px;
+            background-color: colors.$gray;
+        }
+    }
+
+    &__breadcrumb {
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        @include mixins.mq('to', 1400) {
+            background-color: colors.$gray;
+        }
+
+        @include mixins.mq('to', 1400) {
+            padding: 10px 25px;
+        }
+
+        &--hide-on-mobile {
+            padding-top: 24px;
+
+            @include mixins.mq('to', 1400) {
+                display: none;
+            }
+        }
+
+        &--hide-on-desktop {
+            @include mixins.mq('from', 1400) {
+                display: none;
+            }
+        }
+
+        img {
+            width: 14px;
+            height: 10px;
+        }
+    }
+
+    &__breadcrumb-data {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        a,
+        p,
+        span {
+            @include mixins.mq('from', 1400) {
+                font-size: 11px;
+                line-height: 1.6;
+                letter-spacing: 0.55px;
+            }
+
+            @include mixins.mq('to', 1400) {
+                font-size: 10px;
+                line-height: 1.6;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        p {
+            color: colors.$darkGray;
+        }
+
+        a {
+            color: colors.$darkGray;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @include mixins.mq('to', 1400) {
+                color: colors.$lightGray;
+            }
+        }
+    }
+
+    &__breadcrumb-data-separator {
+        @include mixins.mq('from', 1400) {
+            color: colors.$darkGray;
+        }
+
+        @include mixins.mq('to', 1400) {
+            color: colors.$lightGray;
+        }
+    }
+
+    &__data-wrapper {
+        @include mixins.mq('from', 1400) {
+            padding-top: 53px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            padding-top: 32px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        color: colors.$darkGray;
+        border-bottom: 1px solid colors.$lightGray2;
+
+        @include mixins.mq('from', 1400) {
+            gap: 8px;
+            padding-bottom: 21px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            gap: 16px;
+            padding-bottom: 24px;
+        }
+
+        h1,
+        p {
+            font-weight: normal;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    &__description {
+        padding-top: 18px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: colors.$darkGray;
+        letter-spacing: 0.7px;
+        font-weight: 300;
+    }
+
+    &__declarations {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+        margin-top: 30px;
+        padding-bottom: 35px;
+        border-bottom: 1px solid colors.$lightGray2;
+
+        @include mixins.mq('from', 1000) {
+            column-gap: 54px;
+        }
+
+        @include mixins.mq('to', 767) {
+            column-gap: 11px;
+        }
+    }
+
+    &__declaration {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:nth-child(even) {
+            @include mixins.mq('fromto', 767, 1400) {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &__declaration-icon {
+        @include mixins.mq('from', 1400) {
+            width: 52px;
+            height: 52px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            width: 56px;
+            height: 56px;
+        }
+    }
+
+    &__declaration-title {
+        font-size: 14px;
+        line-height: 1.6;
+        color: colors.$lightGray2;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    &__radio-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        @include mixins.mq('from', 1400) {
+            padding-top: 30px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            padding-top: 41px;
+        }
+    }
+
+    &__cart-controls {
+        display: flex;
+        position: relative;
+        margin-top: 52px;
+
+        @include mixins.mq('from', 1400) {
+            gap: 16px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            gap: 19px;
+        }
+    }
+
+    &__accordion {
+        max-width: 1216px;
+        margin-inline: auto;
+        padding-inline: 25px;
+
+        @include mixins.mq('to', 1400) {
+            margin-top: 8px;
+        }
+    }
+
+    &__slider {
+        max-width: 1309px;
+        margin-inline: auto;
+
+        @include mixins.mq('from', 1400) {
+            margin-top: 124px;
+            padding-inline: 48px;
+            margin-bottom: 34px;
+        }
+
+        @include mixins.mq('to', 1400) {
+            padding-inline: 25px;
+            margin-top: 71px;
+            margin-bottom: 170px;
+        }
+
+        h2 {
+            text-align: center;
+            line-height: 1.6;
+            font-weight: normal;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            color: colors.$darkGray;
+
+            @include mixins.mq('from', 1400) {
+                font-size: 28px;
+                margin-bottom: 13px;
+            }
+
+            @include mixins.mq('to', 1400) {
+                font-size: 24px;
+                margin-bottom: 71px;
+            }
+        }
+    }
+}
+
+.product-page-decoration {
+    height: 210px;
+    width: 540px;
+    background-color: colors.$gray;
+    margin-left: auto;
+
+    @include mixins.mq('to', 1400) {
+        display: block;
+    }
+
+    @include mixins.mq('to', 1400) {
+        display: none;
+    }
+}
