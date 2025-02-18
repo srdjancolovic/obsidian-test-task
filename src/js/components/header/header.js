@@ -29,22 +29,22 @@ export async function loadHeader() {
                     </a>
                     <div class="header__mobile-menu-search">
                         <button>
-                            <img src=${menuIcon} alt="Menu" />
+                            <img src=${menuIcon} class='header__menu-icon' alt="Menu" />
                         </button>
                         <button class="header__search-btn--hide-on-desktop">
-                            <img src=${searchIcon} alt="Search" />
+                            <img src=${searchIcon} class='header__search-icon' alt="Search" />
                         </button>
                     </div>
                     <ul class="header__menu"></ul>
                     <div class="header__buttons">
                         <button class="header__search-btn--hide-on-mobile">
-                            <img src=${searchIcon} alt="Search" />
+                            <img src=${searchIcon} class='header__search-icon' alt="Search" />
                         </button>
                         <button>
-                            <img src=${userIcon} alt="User" />
+                            <img src=${userIcon} class='header__user-icon' alt="User" />
                         </button>
                         <button>
-                            <img src=${bagIcon} alt="Bag" />
+                            <img src=${bagIcon} class='header__bag-icon' alt="Bag" />
                         </button>
                     </div>
                 </nav>

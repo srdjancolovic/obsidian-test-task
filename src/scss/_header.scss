@@ -11,7 +11,7 @@
     }
 
     @include mixins.mq('to', 767) {
-        padding: 6px 24px 6px 28px;
+        padding: 6px 21px 6px 28px;
     }
 
     &__nav {
@@ -102,6 +102,49 @@
     &__mobile-menu-search {
         @include mixins.mq('from', 767) {
             display: none;
+        }
+    }
+
+    &__menu-icon {
+        @include mixins.mq('to', 767) {
+            width: 24px;
+            height: 21px;
+        }
+    }
+
+    &__search-icon {
+        @include mixins.mq('from', 767) {
+            width: 20px;
+            height: 20px;
+        }
+
+        @include mixins.mq('to', 767) {
+            width: 23px;
+            height: 23px;
+        }
+    }
+
+    &__user-icon {
+        @include mixins.mq('from', 767) {
+            width: 16px;
+            height: 18px;
+        }
+
+        @include mixins.mq('to', 767) {
+            width: 18px;
+            height: 21px;
+        }
+    }
+
+    &__bag-icon {
+        @include mixins.mq('from', 767) {
+            width: 18px;
+            height: 21px;
+        }
+
+        @include mixins.mq('to', 767) {
+            width: 21px;
+            height: 24px;
         }
     }
 }
